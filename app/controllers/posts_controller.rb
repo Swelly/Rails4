@@ -15,11 +15,6 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @post }
-    end
   end
 
   # GET /posts/1/edit
@@ -76,7 +71,4 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:name, :description)
     end
-
-
-
 end
